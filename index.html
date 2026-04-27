@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GDZ AI — умные решения и объяснения</title>
+    <link rel="stylesheet" href="frontend/styles/main.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="logo">GDZ <span>AI</span></div>
+      <nav>
+        <a href="#books">Учебники</a>
+        <a href="#solve">Решить задачу</a>
+        <a href="#explain">Объяснить тему</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <h1>Готовые домашние задания с ИИ-помощником</h1>
+        <p>
+          Выберите учебник СНГ, загрузите фото задания или напишите условие — ИИ даст
+          пошаговое решение в понятном стиле.
+        </p>
+      </section>
+
+      <section id="books" class="card">
+        <h2>Каталог учебников</h2>
+        <div class="filters">
+          <select id="countryFilter"></select>
+          <select id="gradeFilter"></select>
+          <input id="subjectFilter" placeholder="Предмет" />
+          <button id="loadBooksBtn">Найти</button>
+        </div>
+        <div id="booksGrid" class="books-grid"></div>
+      </section>
+
+      <section id="solve" class="card">
+        <h2>Решить задачу</h2>
+        <form id="solveForm">
+          <label>Как объясняли в школе</label>
+          <textarea id="schoolStyle" rows="5" placeholder="Например: сначала находим ОДЗ, потом раскрываем скобки..."></textarea>
+          <label>Текст задания</label>
+          <textarea id="taskText" rows="5" placeholder="Введите задание"></textarea>
+          <label>Фото задания</label>
+          <input id="taskPhoto" type="file" accept="image/*" />
+          <button type="submit">Получить решение</button>
+        </form>
+        <pre id="solveResult"></pre>
+      </section>
+
+      <section id="explain" class="card">
+        <h2>Объяснить тему простыми словами</h2>
+        <form id="explainForm">
+          <input id="explainTopic" placeholder="Например: квадратные уравнения" />
+          <select id="explainLevel">
+            <option value="5">5 класс</option>
+            <option value="6">6 класс</option>
+            <option value="7">7 класс</option>
+            <option value="8">8 класс</option>
+            <option value="9">9 класс</option>
+            <option value="10">10 класс</option>
+            <option value="11">11 класс</option>
+          </select>
+          <button type="submit">Объяснить</button>
+        </form>
+        <pre id="explainResult"></pre>
+      </section>
+    </main>
+
+    <script src="frontend/scripts/app.js" type="module"></script>
+  </body>
+</html>
